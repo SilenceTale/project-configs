@@ -40,3 +40,10 @@ springdoc:
     doc-expansion: none
   paths-to-match:
     - /**
+
+# cors 설정
+cors:
+  allowed:
+    - https://silvertale.xyz
+    - https://board-service.silvertale.xyz
+    - http://localhost:3000
