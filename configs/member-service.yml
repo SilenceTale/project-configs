@@ -43,10 +43,8 @@ springdoc:
 
 # cors 설정
 cors:
-  allowed:
-    - https://myserver.silvertale.xyz
-    - http://localhost:3000
+  allowed: https://pintech.koreait.xyz, http://localhost:3000
 
-# 프론트 엔드 도메인
+# 프론트 앤드 도메인
 front:
-  domain: https://myserver.silvertale.xyz,http://localhost:3000
+  domain: https://pintech.koreait.xyz,http://localhost:3000
