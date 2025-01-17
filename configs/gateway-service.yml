@@ -11,7 +11,7 @@ spring:
           '[/**]':
             allowedOrigins:
               - 'http://localhost:3000'
-              - 'https://pintech.koreait.xyz'
+              - 'https://config-server.silvertale.xyz'
 
         allowCredentials: true # 요청시 인증정보 전송 허가
         allowedHeaders: '*'
@@ -28,6 +28,12 @@ spring:
           filters:
             - RewritePath=/api/v1/member/?(?<path>.*),/$\{path}
 
+        - id: file-service
+          uri: lb://file-service
+          predicates:
+            - Path=/api/v1/pokemon/**
+          filters:
+            - RewritePath=/api/v1/file/?(?<path>.*),/$\{path}
 # 유레카 설정
 eureka:
   instance:
