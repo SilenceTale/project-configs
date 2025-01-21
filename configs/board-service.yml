@@ -1,5 +1,5 @@
 server:
-  port: 3337
+  port: 3338
 
 spring:
   # 데이터 베이스 설정
@@ -8,18 +8,49 @@ spring:
     url: jdbc:oracle:thin:@${db.host}:XE
     username: ${db.username}
     password: ${db.password}
+
+  # JPA 설정
   jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
     hibernate:
-      ddl-auto: create
-    show-sql: true
+      ddlAuto: ${ddl.auto}
 
-cors:
-  allowed-origins:
-    - https://ksg-eureka-service.silvertale.xyz
-    - localhost:3002
+# 로거 설정
+logging:
+  level:
+    org.hibernate.type: trace
+    org.hibernate.orm.jdbc.bind: trace
 
-swagger:
+# Swagger API 설정
+springdoc:
+  version: '1.0.0'
   api-docs:
     path: /api-docs
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
   swagger-ui:
-    path: /swagger-ui.html
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /apidocs.html
+    disable-swagger-default-url: true
+    doc-expansion: none
+  paths-to-match:
+    - /**
+
+# cors 설정
+cors:
+  allowed: https://ksg-eureka-service.silvertale.xyz, http://localhost:3002
+
+# 유레카 설정
+eureka:
+  instance:
+    hostname: ${hostname}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${eureka.server}/eureka/
