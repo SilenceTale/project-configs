@@ -15,8 +15,8 @@ spring:
 
 cors:
   allowed-origins:
-    - http://ksg-eureka-service.silvertale.xyz
-    - http://localhost:3002
+    - https://ksg-eureka-service.silvertale.xyz
+    - localhost:3002
 
 swagger:
   api-docs:
