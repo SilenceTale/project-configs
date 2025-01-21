@@ -1,5 +1,5 @@
 server:
-  port: 3998
+  port: 3330
 
 eureka:
   instance:
@@ -9,6 +9,6 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone:
-        - ${protocol}://${eureka.instance.hostname}:${server.port}/eureka
+        - ${protocol}://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 30000 # 30초에 한번씩 인스턴스 검색

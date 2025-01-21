@@ -1,5 +1,5 @@
 server:
-  port: 3338
+  port: 3337
 
 spring:
   # 데이터 베이스 설정
@@ -43,7 +43,7 @@ springdoc:
 
 # cors 설정
 cors:
-  allowed: https://ksg-eureka-service.silvertale.xyz, http://localhost:3002
+  allowed: https://advisor-eureka-server.koreait.xyz, http://localhost:3330
 
 # 유레카 설정
 eureka:

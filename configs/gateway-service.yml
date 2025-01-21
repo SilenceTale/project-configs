@@ -1,5 +1,5 @@
 server:
-  port: 3997
+  port: 3331
 
 spring:
   cloud:
@@ -10,8 +10,8 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins:
-              - 'http://localhost:3000'
-              - 'https://ksg-config-server.silvertale.xyz'
+              - 'http://localhost:3331'
+              - 'https://advisor-gateway-server.koreait.xyz/actuator/gateway'
 
         allowCredentials: true # 요청시 인증정보 전송 허가
         allowedHeaders: '*'
