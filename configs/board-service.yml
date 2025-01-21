@@ -1,0 +1,25 @@
+server:
+  port: 3002
+
+spring:
+  # 데이터 베이스 설정
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@${db.host}:XE
+    username: ${db.username}
+    password: ${db.password}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+cors:
+  allowed-origins:
+    - http://ksg-eureka-service.silvertale.xyz
+    - http://localhost:3002
+
+swagger:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

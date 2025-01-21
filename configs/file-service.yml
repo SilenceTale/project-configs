@@ -55,7 +55,7 @@ springdoc:
 
 # cors 설정
 cors:
-  allowed: http://eureka-service.silvertale.xyz, http://localhost:3002
+  allowed: https://ksg-eureka-service.silvertale.xyz, http://localhost:3002
 
 # 유레카 설정
 eureka:
