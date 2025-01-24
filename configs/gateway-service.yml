@@ -31,9 +31,16 @@ spring:
         - id: file-service
           uri: lb://file-service
           predicates:
-            - Path=/api/v1/pokemon/**
+            - Path=/api/v1/file/**
           filters:
             - RewritePath=/api/v1/file/?(?<path>.*),/$\{path}
+
+        - id: card-service
+          uri: lb://card-service
+          predicates:
+            - Path=/api/v1/card/**
+          filters:
+            - RewritePath=/api/v1/card/?(?<path>.*),/$\{path}
 # 유레카 설정
 eureka:
   instance:
