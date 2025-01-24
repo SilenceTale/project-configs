@@ -1,0 +1,4 @@
+# 파이썬 설정
+pyhon:
+  path: ${python.run.path}
+  script: ${python.script.path}
